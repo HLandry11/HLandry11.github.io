@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
     <head>
-        <title>Hayden's Wonderland</title>
+        <title>Hayden's Computing Genious</title>
         <style>
             body {
                 background: rgb(23, 84, 241);
@@ -61,44 +61,54 @@
                 flex: 1;
                 padding: 15px;
             }
+            /* portfolio styles */
+            #portfolio {
+                list-style-type: none;
+                padding-left: 0;
+            }
+            
+            #portfolio li {
+                background: #fff;
+                padding: 10px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+            }
+            
+            #portfolio li:hover {
+                background: #eee;
+            } 
+            
+            #portfolio a {
+                text-decoration: none;
+                color: #454545;
+            }
             .interests header {
                 font-size: 1.25em;
             }
         </style>
+
     </head>
-    
+
     <body>
-        <div id="all-contents">
-            <nav>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="studies.html">Studies</a></li>
+    <div id="all-contents">
+        <nav>
+            <header>Hayden's Computing Genious</header>
+            <ul>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="portfolio.html">Portfolio</a>
+                </li>
+            </ul>
+        </nav>
+        <main>
+            <div class="content">
+                <h1>Portfolio</h1>
+                <ul id="portfolio">
                 </ul>
-            </nav>
-            
-            <main>
-                <div class="sidebar">
-                    <img src ="https://scontent-atl3-1.xx.fbcdn.net/v/t1.0-9/37197235_1877604752259890_3770240111971663872_n.jpg?_nc_cat=104&_nc_ht=scontent-atl3-1.xx&oh=cf14902533430515ac4c864e8f319b6f&oe=5C87B86C">
-                </div>
-                
-                <div class="content">
-                    <header>Hayden Landry</header>
-                    <p>Student at Operation Spark.</p>
-                    
-                    <section class="interests">
-                        <header>Interests</header>
-                        <ul>
-                           <li>Computer Programming</li>
-                           <li>Smashing Computers into Bits</li>
-                           <li>Classical Music</li>
-                        </ul>
-                    </section>
-                  
-                </div>
-                
-            </main>
-        </div>
+            </div>
+        </main>
+    </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script id="portfolioScript">$(document).ready(function() {$.getJSON('projects/projects.json').then(function(data) { data.projects.forEach(function(project){ $('#portfolio').append('<li><a href="projects/' + project.name + '/">' + project.title + ' : ' + project.description + '</a></li>'); }); }); });</script>
     </body>
 </html>
-
